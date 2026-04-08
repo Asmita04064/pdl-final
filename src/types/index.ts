@@ -20,6 +20,7 @@ export interface Post {
   latitude: number;
   longitude: number;
   imageUrl?: string;
+  imageCaption?: string;
   verificationStatus: VerificationStatus;
   confidenceScore: number;
   userId: string;
@@ -37,6 +38,7 @@ export interface Report {
   latitude: number;
   longitude: number;
   imageUrl?: string;
+  imageCaption?: string;
   verificationStatus: VerificationStatus;
   confidenceScore: number;
   status: "pending" | "active" | "resolved";

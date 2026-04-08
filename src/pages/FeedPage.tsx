@@ -62,6 +62,9 @@ export default function FeedPage() {
                     className="w-full h-auto max-h-96 object-cover"
                     loading="lazy"
                   />
+                  {post.imageCaption && (
+                    <p className="text-xs text-muted-foreground p-2 bg-muted/50">{post.imageCaption}</p>
+                  )}
                 </div>
               )}
 

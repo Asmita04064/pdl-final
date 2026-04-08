@@ -3,12 +3,249 @@ import { Bot, Send, User, Video, VideoOff, Camera } from "lucide-react";
 import type { AssistantMessage } from "@/types";
 
 const KB: Record<string, string> = {
-  flood: "**During a flood:**\n- Move to higher ground immediately\n- Avoid walking/driving through flood waters\n- 6 inches of moving water can knock you down\n- Turn off utilities at main switches\n- Disconnect electrical appliances\n- Do not touch electrical equipment if wet\n\n**Emergency numbers:** Call 112 (India) or your local emergency number.",
-  fire: "**During a fire:**\n- GET OUT, STAY OUT, CALL for help\n- Crawl low under smoke\n- Feel doors before opening — if hot, use another exit\n- Cover nose/mouth with a wet cloth\n- Stop, Drop, and Roll if clothes catch fire\n- Never go back inside a burning building\n\n**Emergency:** Call 101 (Fire) or 112.",
-  earthquake: "**During an earthquake:**\n- DROP, COVER, and HOLD ON\n- Stay away from windows and heavy objects\n- If indoors, stay inside — do not run outside\n- If outdoors, move away from buildings\n- After shaking stops, check for injuries\n- Be prepared for aftershocks\n\n**Emergency:** Call 112.",
-  emergency: "**Emergency contacts (India):**\n- Police: 100\n- Fire: 101\n- Ambulance: 102 / 108\n- Disaster Management: 1078\n- Women Helpline: 1091\n- Universal Emergency: 112",
-  severity: "**Severity levels in ResQNet:**\n- Watch (Low): Situation developing, stay informed\n- Warning (Medium): Potential danger, prepare to act\n- Critical: Immediate danger, take action now\n\nVerification statuses:\n- Verified: Confirmed by multiple sources\n- Under Review: Being evaluated\n- Likely Misleading: Could not be verified",
-  help: "I can help with:\n- **Flood safety** — ask about floods\n- **Fire safety** — ask about fire\n- **Earthquake safety** — ask about earthquakes\n- **Emergency contacts** — ask for emergency numbers\n- **Severity levels** — ask what severity levels mean",
+  flood: `**Flood Safety Guide - Complete Handbook**
+
+**What is a Flood?**
+A flood occurs when water overflows onto normally dry land. This can happen due to heavy rainfall, storm surges, dam breaks, or rapid snowmelt.
+
+**Before a Flood:**
+- Know your flood risk - check local flood maps
+- Prepare an emergency kit with water, food, medications, and important documents
+- Make a family emergency plan and designate a meeting place
+- Elevate electrical appliances and utilities
+- Buy flood insurance - standard homeowners insurance doesn't cover flooding
+- Prepare sandbags and waterproofing materials
+
+**During a Flood:**
+- Move to higher ground immediately if flooding is imminent
+- Avoid walking or driving through flood waters - 6 inches of moving water can knock you down, 12 inches can float a car
+- Stay away from downed power lines and electrical wires
+- If trapped in a building, go to the highest floor
+- Listen to emergency broadcasts for updates
+- Turn off utilities at main switches if instructed to do so
+
+**After a Flood:**
+- Return home only when authorities say it's safe
+- Avoid driving through standing water
+- Check for structural damage before entering
+- Take photos of damage for insurance claims
+- Boil water until authorities declare it safe
+- Watch for secondary hazards like contaminated water and disease
+
+**Emergency Contacts:**
+- National Disaster Response Force (NDRF): 011-24363260
+- Local Police: 100
+- Fire Services: 101
+- Medical Emergency: 102/108
+
+**Remember:** Flood waters can contain sewage, chemicals, and debris. Even shallow water can hide dangerous currents.`,
+  fire: `**Fire Safety and Emergency Response Guide**
+
+**Types of Fires:**
+- Class A: Ordinary combustibles (wood, paper, cloth)
+- Class B: Flammable liquids (gasoline, oil, paint)
+- Class C: Electrical fires
+- Class D: Metal fires
+- Class K: Kitchen fires (cooking oils/fats)
+
+**Fire Prevention:**
+- Install and maintain smoke alarms on every level
+- Keep fire extinguishers accessible and know how to use them
+- Never leave cooking unattended
+- Keep flammable materials away from heat sources
+- Practice electrical safety - don't overload outlets
+- Have working fire escapes and emergency ladders
+
+**During a Fire:**
+- GET OUT, STAY OUT, CALL for help
+- Crawl low under smoke - smoke rises, cleaner air is lower
+- Feel doors before opening - if hot, use another exit
+- Use wet cloth over nose/mouth to filter smoke
+- Stop, Drop, and Roll if clothes catch fire
+- Never go back inside a burning building
+- Call emergency services from a safe location
+
+**Fire Extinguisher Use:**
+- P.A.S.S. method: Pull pin, Aim at base of fire, Squeeze handle, Sweep side to side
+- Use appropriate extinguisher for fire type
+- Know when to evacuate instead of fighting fire
+
+**Emergency Numbers:**
+- Fire Services: 101
+- Police: 100
+- Ambulance: 102
+- Control Room: 112
+
+**Post-Fire Safety:**
+- Do not enter damaged buildings
+- Watch for structural collapse
+- Seek medical attention for smoke inhalation
+- Contact insurance immediately`,
+  earthquake: `**Earthquake Preparedness and Response**
+
+**Understanding Earthquakes:**
+- Caused by sudden release of energy in Earth's crust
+- Measured by Richter scale (magnitude) and Mercalli scale (intensity)
+- Can cause ground shaking, liquefaction, landslides, and tsunamis
+- Aftershocks can occur for days or weeks
+
+**Before an Earthquake:**
+- Secure heavy furniture and appliances
+- Know safe spots in each room (under sturdy tables, against interior walls)
+- Prepare emergency kits and family plans
+- Identify potential hazards in your home
+- Learn first aid and CPR
+- Make your home earthquake-resistant where possible
+
+**During an Earthquake:**
+- DROP to the ground, COVER under protective furniture, HOLD ON until shaking stops
+- Stay away from windows, exterior walls, and tall furniture
+- If outdoors, move to open area away from buildings, trees, and power lines
+- If driving, stop safely and stay in vehicle
+- If in bed, stay there and protect head with pillow
+
+**After an Earthquake:**
+- Expect aftershocks - DROP, COVER, HOLD ON
+- Check yourself and others for injuries
+- Check utilities for damage (gas leaks, electrical shorts)
+- Listen to emergency broadcasts for instructions
+- Be prepared for secondary hazards (fires, landslides, tsunamis)
+- Help neighbors who may need assistance
+
+**Emergency Response:**
+- Police: 100
+- Fire: 101
+- Ambulance: 102
+- Disaster Management: 1078
+- National Emergency: 112
+
+**Long-term Recovery:**
+- Document damage for insurance
+- Follow rebuilding guidelines
+- Participate in community recovery efforts
+- Prepare for future earthquakes`,
+  emergency: `**Emergency Contact Directory - India**
+
+**National Emergency Numbers:**
+- **112**: Universal Emergency Number (works nationwide)
+- **100**: Police Emergency
+- **101**: Fire Emergency  
+- **102**: Ambulance/Medical Emergency
+- **108**: Free Ambulance Service (rural areas)
+- **1091**: Women Helpline
+- **1098**: Child Helpline
+- **1078**: Disaster Management Helpline
+
+**State-wise Emergency Numbers:**
+- **Andhra Pradesh**: Police 100, Fire 101, Ambulance 108
+- **Delhi**: Police 100, Fire 101, Ambulance 102
+- **Gujarat**: Police 100, Fire 101, Ambulance 108
+- **Karnataka**: Police 100, Fire 101, Ambulance 102
+- **Maharashtra**: Police 100, Fire 101, Ambulance 102/108
+- **Rajasthan**: Police 100, Fire 101, Ambulance 102
+- **Tamil Nadu**: Police 100, Fire 101, Ambulance 108
+- **Uttar Pradesh**: Police 100, Fire 101, Ambulance 102/108
+- **West Bengal**: Police 100, Fire 101, Ambulance 102
+
+**International Emergency:**
+- **911**: If calling from abroad to India
+
+**Important Guidelines:**
+- Always provide your exact location when calling
+- Stay calm and speak clearly
+- Have emergency contacts saved in phone
+- Know your blood type and medical conditions
+- Keep emergency numbers visible in home/office
+
+**Additional Resources:**
+- National Disaster Management Authority (NDMA)
+- Indian Red Cross Society
+- Local Civil Defense organizations`,
+  severity: `**Understanding ResQNet Severity Levels**
+
+**Severity Classification System:**
+Our app uses a three-tier severity system to help prioritize emergency responses:
+
+**🔴 Critical (Red):**
+- Immediate danger to life and property
+- Requires urgent emergency response
+- Examples: Active flooding, building collapse, major fires, mass casualties
+- Response time: Within minutes
+- Verification: Multiple sources, high confidence
+
+**🟡 Warning (Yellow/Orange):**
+- Potential danger developing
+- Requires preparation and monitoring
+- Examples: Rising flood waters, earthquake aftershocks, chemical spills
+- Response time: Within hours
+- Verification: Single or unconfirmed reports
+
+**🟢 Watch (Green):**
+- Situation developing, stay informed
+- No immediate danger but monitor closely
+- Examples: Weather warnings, minor tremors, suspicious activities
+- Response time: Within days
+- Verification: Low confidence, needs verification
+
+**Verification Status:**
+- **Verified**: Confirmed by multiple independent sources
+- **Under Review**: Being evaluated by responders
+- **Likely Misleading**: Could not be verified, may be false alarm
+
+**How to Report:**
+- Use the Report tab to submit incidents
+- Include location, description, and photos if possible
+- Reports are automatically verified using AI analysis
+- False reports may result in account restrictions
+
+**Responder Guidelines:**
+- Critical reports get immediate attention
+- Warning reports are monitored and verified
+- Watch reports are logged for future reference
+- All reports contribute to community safety`,
+  help: `**ResQNet AI Assistant - Help Guide**
+
+**What I Can Help With:**
+- **Disaster Safety**: Floods, fires, earthquakes, and other emergencies
+- **Emergency Contacts**: Phone numbers for police, fire, ambulance
+- **Severity Levels**: Understanding alert classifications
+- **Safety Tips**: Prevention and response strategies
+- **Report Guidance**: How to submit accurate emergency reports
+
+**How to Ask Questions:**
+- Be specific: "What should I do during a flood?"
+- Ask about locations: "Emergency numbers in Mumbai"
+- Request guidance: "How to prepare for earthquakes"
+- Get verification help: "What does 'Critical' severity mean?"
+
+**Available Commands:**
+- "flood" - Complete flood safety guide
+- "fire" - Fire prevention and response
+- "earthquake" - Earthquake preparedness
+- "emergency" - Contact directory
+- "severity" - Alert level explanations
+- "help" - This guide
+
+**Video Analysis Feature:**
+- Start a video call for real-time safety monitoring
+- Images are captured every 10 seconds
+- AI analyzes for potential hazards
+- Get instant safety assessments
+
+**Tips for Best Results:**
+- Use clear, specific questions
+- Include location details when relevant
+- Take photos of incidents for better analysis
+- Stay calm during emergencies
+
+**Emergency Override:**
+If you're in immediate danger, call emergency services directly:
+- Police: 100
+- Fire: 101
+- Ambulance: 102
+- Universal: 112
+
+Stay safe and help keep your community secure!`,
 };
 
 function getResponse(query: string): string {
@@ -30,13 +267,27 @@ export default function AssistantPage() {
   const [typing, setTyping] = useState(false);
   const [isVideoCallActive, setIsVideoCallActive] = useState(false);
   const [capturedImages, setCapturedImages] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const bottomRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages.length, typing]);
+  const messagesPerPage = 8;
+  const totalPages = Math.ceil(messages.length / messagesPerPage);
+  const startIndex = (currentPage - 1) * messagesPerPage;
+  const endIndex = startIndex + messagesPerPage;
+  const currentMessages = messages.slice(startIndex, endIndex);
+
+  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [currentMessages.length, typing]);
+
+  useEffect(() => {
+    // Auto-scroll to last page when new messages arrive
+    if (messages.length > 0 && currentPage < totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [messages.length, totalPages, currentPage]);
 
   // Cleanup video stream on unmount
   useEffect(() => {
@@ -192,7 +443,7 @@ export default function AssistantPage() {
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.map((msg) => (
+        {currentMessages.map((msg) => (
           <div key={msg.id} className={`flex gap-2.5 ${msg.role === "user" ? "justify-end" : "justify-start"} animate-in`}>
             {msg.role === "assistant" && (
               <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -218,7 +469,7 @@ export default function AssistantPage() {
           </div>
         ))}
 
-        {typing && (
+        {typing && currentPage === totalPages && (
           <div className="flex gap-2.5 animate-in">
             <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
               <Bot className="h-4 w-4 text-primary" />
@@ -235,6 +486,31 @@ export default function AssistantPage() {
 
         <div ref={bottomRef} />
       </div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="p-3 border-t border-border/50 bg-background/50">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className="px-3 py-1 text-sm rounded-lg bg-secondary hover:bg-secondary/80 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Previous
+            </button>
+            <span className="text-sm text-muted-foreground">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className="px-3 py-1 text-sm rounded-lg bg-secondary hover:bg-secondary/80 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Input */}
       <div className="p-4 border-t border-border/50 space-y-3">
